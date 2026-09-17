@@ -5,6 +5,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* STYLING NAV BAR */
 h1{
     color: red;
 }
@@ -44,3 +45,33 @@ h1{
     margin-left: 2rem;
     font-weight: 650;
 }
+
+
+/* STYLING BODY COMPONENT */
+
+.container{
+    height: 90vh;
+    width: 90vw;
+    margin: 2rem auto;
+    border: 3px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content{
+    height: 80vh;
+    width: 45%;
+    border: 3px solid black;
+}
+
+.content h3{
+    font-size:3rem ;
+    margin: 2rem auto;
+}
+.img-section{
+    height: 80vh;
+    width: 45%;
+    border: 3px solid black;
+}
+
