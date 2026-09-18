@@ -13,7 +13,19 @@ app.get('/', (req, res) => {
 })
 
 app.get('/home',(req,res)=>{
-    res.render('index.ejs')
+    res.render('index.ejs');
+})
+
+app.get("/about",(req,res)=>{
+  res.render('about.ejs');
+})
+
+app.get("/service",(req,res)=>{
+  res.render('service.ejs');
+})
+
+app.get("/contact",(req,res)=>{
+  res.render('contact.ejs');
 })
 
 app.listen(port, () => {

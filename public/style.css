@@ -45,15 +45,21 @@ h1{
     margin-left: 2rem;
     font-weight: 650;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 
+.right ul li:hover{
+    font-size: 1.01rem;
+}
 
 /* STYLING BODY COMPONENT */
 
 .container{
     height: 90vh;
-    width: 90vw;
+    width: 83vw;
     margin: 2rem auto;
-    border: 3px solid black;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -62,7 +68,6 @@ h1{
 .content{
     height: 80vh;
     width: 45%;
-    border: 3px solid black;
 }
 
 .content h3{
@@ -72,6 +77,9 @@ h1{
 .img-section{
     height: 80vh;
     width: 45%;
-    border: 3px solid black;
+}
+
+#ab{
+    color: #cf47e0;
 }
 
