@@ -4,6 +4,8 @@ const port = 3000
 const path = require('path')
 const ejsMate = require('ejs-mate');
 
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname,'public/')))
@@ -26,6 +28,11 @@ app.get("/service",(req,res)=>{
 
 app.get("/contact",(req,res)=>{
   res.render('contact.ejs');
+})
+
+app.post("/contact",(req,res)=>{
+  console.log("Contact is saved",req.body)
+  res.redirect('/home')
 })
 
 app.listen(port, () => {

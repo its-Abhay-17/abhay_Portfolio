@@ -83,3 +83,45 @@ a{
     color: #cf47e0;
 }
 
+/* STYLING CONTACT PAGE */
+
+.form{
+    min-height: 80vh;
+    width: 30vw;
+    border: 3px solid black;
+    margin: .1rem auto;
+    border-radius: 1.2rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 2rem 0 0 2rem;
+}
+
+label{
+    margin-top: 1rem;
+    font-size: large;
+    font-weight: 560;
+}
+
+input{
+    width: 90%;
+    height: 2rem;
+    border: 1px solid black;
+    border-radius: .3rem;
+    font-size: medium;
+}
+
+#btn{
+    margin: 1rem  0 0 7rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #242424;
+    color: azure;
+    font-size: 1.5rem;
+    font-weight: 750;
+    border-radius: 10px;
+
+}
