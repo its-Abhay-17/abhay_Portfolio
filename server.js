@@ -3,7 +3,11 @@ const app = express()
 const port = 3000
 const path = require('path')
 const ejsMate = require('ejs-mate');
+const mongoose = require('mongoose');
+const main = require('./models/init')
+const contact = require('./models/contact-model')
 
+main()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.engine('ejs', ejsMate);
@@ -30,8 +34,16 @@ app.get("/contact",(req,res)=>{
   res.render('contact.ejs');
 })
 
-app.post("/contact",(req,res)=>{
-  console.log("Contact is saved",req.body)
+app.post("/contact",async(req,res)=>{
+  let {username,eMail,phoneNumber,msg} = req.body
+  let addingNew = new contact({
+    username:username,
+    eMail:eMail,
+    phoneNumber,
+    msg:msg
+  })
+
+  await contact.inserMany(addingNew)
   res.redirect('/home')
 })
 
