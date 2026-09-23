@@ -1,18 +1,21 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require('express');
 const app = express()
-const port = 3000
+const port = process.env.PORT ||3000;
 const path = require('path')
 const ejsMate = require('ejs-mate');
 const mongoose = require('mongoose');
 const main = require('./models/init')
 const contact = require('./models/contact-model')
+const service = require('./models/service-model')
 
-main()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname,'public/')))
+main() 
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -26,8 +29,10 @@ app.get("/about",(req,res)=>{
   res.render('about.ejs');
 })
 
-app.get("/service",(req,res)=>{
-  res.render('service.ejs');
+app.get("/service",async(req,res)=>{
+  let services = await service.find({});
+  console.log("Services",services);
+  res.render('service.ejs',{services});
 })
 
 app.get("/contact",(req,res)=>{
