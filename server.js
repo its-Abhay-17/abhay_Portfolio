@@ -6,6 +6,7 @@ const port = process.env.PORT ||3000;
 const path = require('path')
 const ejsMate = require('ejs-mate');
 const mongoose = require('mongoose');
+const {Schema} = require('mongoose');
 const main = require('./models/init')
 const contact = require('./models/contact-model')
 const service = require('./models/service-model')
@@ -48,7 +49,8 @@ app.post("/contact",async(req,res)=>{
     msg:msg
   })
 
-  await contact.inserMany(addingNew)
+  await addingNew.save()
+  console.log(addingNew)
   res.redirect('/home')
 })
 
