@@ -2,13 +2,6 @@
 <body>
     <div class="intro">SERVICES</div>
     <span class="Service">
-       <%for(let self of services) {%>
-    <div class="card">
-        <h3><%=self.title%></h3>
-    <h3>~<%= new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(self.price) %>
-</h3>
-    <img src="<%=self.img.url%>" alt="<%=self.img.filename%>" width="400vw">
-    </div>
-    <%}%>
+       
     </span>
 </body>

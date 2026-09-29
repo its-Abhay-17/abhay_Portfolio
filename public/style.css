@@ -65,6 +65,12 @@
     margin-left: 2rem;
     font-weight: 650;
 }
+.icon{
+    display: none;
+    height: 50%;
+    width: 20%;
+    border: 3px solid red;
+}
 
 a {
     text-decoration: none;
@@ -74,7 +80,20 @@ a {
 
 .right ul li:hover {
     letter-spacing: 1px;
-    color: #cf47e0;
+}
+
+@media (width <=450px) { 
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .content{
+        width: 70%;
+    }
+    ul li {
+        /* display: none; */
+        text-decoration: none;
+    }
 }
 
 a:hover {
@@ -266,10 +285,14 @@ input {
     align-items: center;
 }
 
+.right-about i{
+    transition: box-shadow 0.1s ease-in-out;
+}
+
 .right-about i:hover{
     border: 1px black solid;
     border-radius: 8px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 12px 12px 10px rgba(0, 0, 0, 0.15);
 }
 
 .lets-connect{
