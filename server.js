@@ -5,18 +5,13 @@ const app = express()
 const port = process.env.PORT ||3000;
 const path = require('path')
 const ejsMate = require('ejs-mate');
-const mongoose = require('mongoose');
-const {Schema} = require('mongoose');
-const main = require('./models/init')
-const contact = require('./models/contact-model')
-const service = require('./models/service-model')
+
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname,'public/')))
-// main() 
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
